@@ -17,6 +17,9 @@ import NotFound from "./pages/NotFound";
 import AppLayout from "./layouts/AppLayout";
 import Dashboard from "./pages/app/Dashboard";
 import Subscription from "./pages/app/Subscription";
+import Billing from "./pages/app/Billing";
+import Support from "./pages/app/Support";
+import Privacy from "./pages/app/Privacy";
 
 // Admin Layout and Pages
 import AdminLayout from "./layouts/AdminLayout";
@@ -45,9 +48,9 @@ const App = () => (
             }>
               <Route index element={<Dashboard />} />
               <Route path="subscription" element={<Subscription />} />
-              <Route path="billing" element={<div className="p-6"><h1 className="text-2xl font-bold">Facturación - Próximamente</h1></div>} />
-              <Route path="support" element={<div className="p-6"><h1 className="text-2xl font-bold">Soporte - Próximamente</h1></div>} />
-              <Route path="privacy" element={<div className="p-6"><h1 className="text-2xl font-bold">Privacidad - Próximamente</h1></div>} />
+              <Route path="billing" element={<Billing />} />
+              <Route path="support" element={<Support />} />
+              <Route path="privacy" element={<Privacy />} />
             </Route>
 
             {/* Protected Admin Routes */}
