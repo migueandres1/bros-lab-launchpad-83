@@ -11,7 +11,8 @@ import {
   AlertTriangle,
   CheckCircle,
   Mail,
-  Smartphone
+  Smartphone,
+  Bell
 } from 'lucide-react';
 
 const Privacy: React.FC = () => {
