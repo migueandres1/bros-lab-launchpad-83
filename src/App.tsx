@@ -24,6 +24,8 @@ import Privacy from "./pages/app/Privacy";
 // Admin Layout and Pages
 import AdminLayout from "./layouts/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminSettings from "./pages/admin/AdminSettings";
 
 const queryClient = new QueryClient();
 
@@ -60,9 +62,9 @@ const App = () => (
               </ProtectedRoute>
             }>
               <Route index element={<AdminDashboard />} />
-              <Route path="users" element={<div className="p-6"><h1 className="text-2xl font-bold">Gestión de Usuarios - Próximamente</h1></div>} />
+              <Route path="users" element={<AdminUsers />} />
               <Route path="support" element={<div className="p-6"><h1 className="text-2xl font-bold">Tickets de Soporte - Próximamente</h1></div>} />
-              <Route path="settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Configuración - Próximamente</h1></div>} />
+              <Route path="settings" element={<AdminSettings />} />
             </Route>
 
             {/* Catch-all route */}
