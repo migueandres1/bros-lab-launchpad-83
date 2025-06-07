@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,7 +19,18 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Poppins', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
+				// BLT Brand Colors
+				'blt-neon': '#39FF14',
+				'blt-dark': '#0C0C3F',
+				'blt-white': '#FFFFFF',
+				'blt-gray': '#F4F4F4',
+				
+				// Design system colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +96,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						textShadow: '0 0 20px #39FF14, 0 0 30px #39FF14, 0 0 40px #39FF14'
+					},
+					'50%': {
+						textShadow: '0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 2s ease-in-out infinite'
 			}
 		}
 	},
