@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PublicHeader from '@/components/layout/PublicHeader';
@@ -8,52 +7,68 @@ import { Check, Zap, MessageCircle, Smartphone } from 'lucide-react';
 const LandingPage: React.FC = () => {
   const plans = [
     {
-      name: 'BLT Free',
-      price: 'Gratis',
-      period: 'para siempre',
-      description: 'Perfecto para probar nuestros servicios',
+      name: '🥖 Solo el Pan',
+      price: '$125',
+      period: ' (una vez) + $15/mes',
+      description: 'Ideal para tener presencia online',
       features: [
-        'Acceso básico a la plataforma',
-        'Soporte por email',
-        'Recursos limitados',
-        'Sin compromiso'
+        'Landing simple con contacto personalizado',
+        '1 mes de hosting incluido',
+        'Diseño responsive',
+        'Formulario de contacto básico'
       ],
       isPopular: false,
-      buttonText: 'Empezar Gratis',
+      buttonText: 'Empezar con Pan',
       buttonStyle: 'bg-gray-600 hover:bg-gray-700'
     },
     {
-      name: 'BLT Starter',
-      price: '$49',
-      period: '/mes',
-      description: 'Ideal para emprendedores que recién arrancan',
+      name: '🥪 Torta de Jamón',
+      price: '$250',
+      period: ' (una vez) + $25/mes',
+      description: 'Página completa de hasta 10 secciones',
       features: [
-        '1 chatbot personalizado',
-        'Personalización básica',
-        'Soporte por correo',
-        'Dashboard de métricas básico',
-        'Integración con redes sociales'
+        'Hasta 10 secciones personalizadas',
+        'Integraciones con redes sociales',
+        '6 meses de hosting incluido',
+        'Soporte mensual básico',
+        'Optimización para móviles'
       ],
       isPopular: true,
-      buttonText: 'Empezar ahora',
+      buttonText: 'Elegir Torta',
       buttonStyle: 'bg-blt-neon text-blt-dark hover:bg-opacity-90'
     },
     {
-      name: 'BLT Max',
-      price: '$99',
-      period: '/mes',
-      description: 'Para negocios que van en serio',
+      name: '🥓 Sandwich BLT',
+      price: '$450',
+      period: ' (una vez) + $45/mes',
+      description: 'Todo lo anterior + chatbot básico',
       features: [
-        'Hasta 3 chatbots',
-        'Estadísticas avanzadas',
-        'Integración con WhatsApp',
+        'Todo del plan Torta de Jamón',
+        'Chatbot básico 24/7',
+        'Atención automatizada a clientes',
         'Soporte prioritario',
-        'Personalización completa',
-        'Analytics en tiempo real'
+        'Analytics básicos'
       ],
       isPopular: false,
-      buttonText: 'Elegir Pro',
+      buttonText: 'Quiero BLT',
       buttonStyle: 'bg-blt-dark hover:bg-opacity-90'
+    },
+    {
+      name: '🍳 Pan con TODO',
+      price: '$699',
+      period: ' (una vez) + $75/mes',
+      description: 'La experiencia completa BLT',
+      features: [
+        'Todo lo anterior incluido',
+        'Canal privado de soporte por Slack',
+        'Cambios regulares',
+        'Mejoras constantes',
+        'Consultoría mensual',
+        'Prioridad máxima'
+      ],
+      isPopular: false,
+      buttonText: 'TODO incluido',
+      buttonStyle: 'bg-gradient-to-r from-blt-neon to-green-400 text-blt-dark hover:from-green-400 hover:to-blt-neon'
     }
   ];
 
@@ -155,11 +170,11 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative bg-white rounded-2xl shadow-xl p-8 ${
+                className={`relative bg-white rounded-2xl shadow-xl p-6 ${
                   plan.isPopular ? 'ring-4 ring-blt-neon transform scale-105' : ''
                 }`}
               >
@@ -171,32 +186,61 @@ const LandingPage: React.FC = () => {
                   </div>
                 )}
 
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-blt-dark mb-2">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-blt-dark">{plan.price}</span>
-                    <span className="text-gray-600">{plan.period}</span>
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-blt-dark mb-2">{plan.name}</h3>
+                  <div className="mb-3">
+                    <span className="text-2xl font-bold text-blt-dark">{plan.price}</span>
+                    <span className="text-sm text-gray-600">{plan.period}</span>
                   </div>
-                  <p className="text-gray-600">{plan.description}</p>
+                  <p className="text-gray-600 text-sm">{plan.description}</p>
                 </div>
 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <Check className="w-5 h-5 text-blt-neon mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
+                    <li key={featureIndex} className="flex items-start">
+                      <Check className="w-4 h-4 text-blt-neon mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Link
                   to="/register"
-                  className={`w-full py-3 px-6 rounded-lg font-semibold text-center block transition-all ${plan.buttonStyle} text-white`}
+                  className={`w-full py-2 px-4 rounded-lg font-semibold text-center block transition-all text-sm ${plan.buttonStyle} text-white`}
                 >
                   {plan.buttonText}
                 </Link>
               </div>
             ))}
+          </div>
+
+          {/* Motivational message for entrepreneurs */}
+          <div className="mt-16 text-center bg-blt-gray rounded-2xl p-8 mx-auto max-w-4xl">
+            <h3 className="text-2xl font-bold text-blt-dark mb-4">
+              💬 ¿Sos emprendedor y estás comenzando?
+            </h3>
+            <p className="text-lg text-gray-700 mb-6">
+              Sabemos que no es fácil. Por eso tenemos planes especiales para vos.<br />
+              Contactanos por WhatsApp o Instagram y te ayudamos a arrancar.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="https://wa.me/50379263274"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-all flex items-center"
+              >
+                📲 WhatsApp: +503 7926 3274
+              </a>
+              <a
+                href="https://instagram.com/broslab.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-600 transition-all flex items-center"
+              >
+                📸 IG: @broslab.tech
+              </a>
+            </div>
           </div>
         </div>
       </section>
