@@ -346,7 +346,7 @@ const LandingPage: React.FC = () => {
             <div>
               <h4 className="font-semibold mb-4">Empresa</h4>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-blt-neon">Nosotros</a></li>
+                <li><Link to="/about" className="hover:text-blt-neon">Nosotros</Link></li>
                 <li><a href="#" className="hover:text-blt-neon">Blog</a></li>
                 <li><a href="#" className="hover:text-blt-neon">Carreras</a></li>
                 <li><a href="#" className="hover:text-blt-neon">Contacto</a></li>
